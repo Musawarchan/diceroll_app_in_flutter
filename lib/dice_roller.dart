@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'package:first_app/styled_text.dart';
 import 'package:flutter/material.dart';
 
 final randomizer = Random();
@@ -26,6 +27,7 @@ class _DiceROllerState extends State<DiceRoller> {
     return Column(
       mainAxisSize: MainAxisSize.min,
       children: [
+        const StyledText('DICE ROLLER APP'),
         Image.asset(
           'assets/images/dice-$currentDiceROll.png',
           width: 180,
@@ -34,19 +36,11 @@ class _DiceROllerState extends State<DiceRoller> {
         const SizedBox(
           height: 20,
         ),
-        TextButton(
+        OutlinedButton(
           onPressed: rollDice,
-          style: TextButton.styleFrom(
-            // padding: EdgeInsets.only(
-            //   top: 20,
-            // ),
-            foregroundColor: Colors.white,
-            textStyle: const TextStyle(
-              fontSize: 28,
-            ),
-          ),
           child: const Text(
-            'RollUp Dice',
+            'Rollup dice',
+            style: TextStyle(color: Colors.white, fontSize: 15),
           ),
         )
       ],
